@@ -19,8 +19,6 @@ public class Main {
         }
         try {
             File binary = new File(args[0]);
-
-            // Create the ijvm instance
             MachineFactory.createIJVMInstance(binary).run();
         } catch (FileNotFoundException e) {
             System.err.printf("%s\n", e.getMessage());

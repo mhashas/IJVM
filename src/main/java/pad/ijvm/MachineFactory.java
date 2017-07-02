@@ -1,18 +1,26 @@
 package pad.ijvm;
 
 import pad.ijvm.interfaces.IJVMInterface;
+import pad.ijvm.IJVM;
 
 import java.io.File;
 import java.io.IOException;
 
 public class MachineFactory {
 
-    public static IJVMInterface createIJVMInstance(File binary) throws IOException {
-        // Create new machine instance here and return it.
+	/**
+	 * Creates a new machine instance, loads the binary and returns it
+	 * 
+	 * @param binary
+	 * @return
+	 * @throws IOException
+	 */
+	public static IJVMInterface createIJVMInstance(File binary) throws IOException {
+		IJVM instance = new IJVM();
 
-        // 1) Load the binary
-        // 2) Return the new IJVM instance without starting it.
-        return null;
-    }
+		instance.addBinary(binary);
+
+		return instance;
+	}
 
 }
